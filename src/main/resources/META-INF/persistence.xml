@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	version="2.1">
+
+	<persistence-unit name="mappingtest">
+		
+			<!--  m2o  다대일 단방향 매핑 -->
+<!-- 		<class>com.cafe24.mapping.m2o_uni.domain.Member</class> -->
+<!-- 		<class>com.cafe24.mapping.m2o_uni.domain.Team</class> -->
+		
+			<!-- m2o 다대일 양방향 매핑 -->
+<!-- 		<class>com.cafe24.mapping.m2o_by.domain.Member</class> -->
+<!-- 		<class>com.cafe24.mapping.m2o_by.domain.Team</class> -->
+			<!-- o2m 일대다 단방향 매핑 -->
+<!-- 		<class>com.cafe24.mapping.o2m_uni.domain.Member</class> -->
+<!-- 		<class>com.cafe24.mapping.o2m_uni.domain.Team</class> -->
+			
+			<!-- o2m 양방향 매핑 -->
+<!-- 		<class>com.cafe24.mapping.o2m_by.domain.Member</class> -->
+<!-- 		<class>com.cafe24.mapping.o2m_by.domain.Team</class> -->
+		
+			<!-- o2o 단방향 , 양방향 매핑 -->
+<!-- 		<class>com.cafe24.mapping.o2o_uni.domain.Locker</class> -->
+<!-- 		<class>com.cafe24.mapping.o2o_uni.domain.Member</class> -->
+		
+		<!--  m2m 단방향, 양방향 매핑 -->
+		<class>com.cafe24.mapping.m2m.uni.domain.Member</class>
+		<class>com.cafe24.mapping.m2m.uni.domain.Product</class>
+		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		
+		<properties>
+
+			<!-- 필수 속성 -->
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.user" value="jpadb" />
+			<property name="javax.persistence.jdbc.password" value="jpadb" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpadb" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+
+
+			<!-- 옵션 -->
+			<!-- 실행한 sql 출력 -->
+			<property name="hibernate.show_sql" value="true" />
+			<!-- sql 출력시 정렬 -->
+			<property name="hibernate.format_sql" value="true" />
+			<!-- 쿼리 실행시 주석도 -->
+			<property name="hibernate.use_sql_comments" value="true" />
+			<!-- 아이디 생성 전략 -->
+			<property name="hibernate.id.new_generator_mappings" value="true" />
+
+			<!-- drop 하고 테이블 만들어서 넣기 -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="create" /> -->
+			<!-- 데이터 집어 넣고 테이블 삭제 -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+
+		</properties>
+
+	</persistence-unit>
+
+</persistence>
