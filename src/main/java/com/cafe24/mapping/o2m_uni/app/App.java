@@ -11,7 +11,7 @@ import com.cafe24.mapping.o2m_uni.domain.Team;
 public class App {
 	public static void main(String[] args) {
 
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabookmall");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("mappingtest");
 
 		EntityManager em = emf.createEntityManager();
 
